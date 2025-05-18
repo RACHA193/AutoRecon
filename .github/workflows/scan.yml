@@ -27,9 +27,10 @@ jobs:
           source venv/bin/activate
           chmod +x main.py
           ./main.py --target testphp.vulnweb.com
+      # Upload step removed to avoid runner errors
 
-      - name: Upload Report
-        uses: actions/upload-artifact@v2
-        with:
-          name: AutoRecon Report
-          path: reports/
+      #- name: Upload Report
+      #  uses: actions/upload-artifact@v2
+      #  with:
+      #    name: AutoRecon Report
+      #    path: reports/
