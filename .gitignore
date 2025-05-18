@@ -1,0 +1,13 @@
+# Python virtual environment
+venv/
+# Optional: if you named it differently
+env/
+ENV/
+# Byte‑compiled / cache
+__pycache__/
+*.py[cod]
+# Logs
+*.log
+# Reports (if you don’t want to track them in Git)
+reports/
+
