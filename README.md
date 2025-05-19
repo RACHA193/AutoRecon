@@ -4,6 +4,8 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/RACHA193/AutoRecon/scan.yml?branch=main)](https://github.com/RACHA193/AutoRecon/actions)
 
 
+This initial release delivers a lean, “minimal viable” version distilled from a range of popular recon frameworks, just enough core scanning, banner‑grabbing, and JSON/CSV output to get you started. It’s intentionally basic, inspired by the best community tools, and built in one day
+
 ## What AutoRecon Does
 
 1. **Host Discovery**: Supports single IP/domain or entire networks (CIDR).
