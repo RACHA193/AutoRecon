@@ -1,94 +1,55 @@
-# AutoRecon
+# AutoRecon* 
 
 [![AutoRecon Scan](https://github.com/RACHA193/AutoRecon/actions/workflows/scan.yml/badge.svg)](https://github.com/RACHA193/AutoRecon/actions/workflows/scan.yml)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/RACHA193/AutoRecon/scan.yml?branch=main)](https://github.com/RACHA193/AutoRecon/actions)
-[![License](https://img.shields.io/github/license/RACHA193/AutoRecon)](LICENSE)
 
 
-**AutoRecon** is a one‑command, Python‑based active reconnaissance and web vulnerability scanning framework designed for penetration testers and security researchers. It automates:
+## What AutoRecon Does
 
-1. **Host discovery** (ping sweep or single host) via Nmap
-2. **Service & version enumeration** on common ports via Nmap SYN scans
-3. **Web vulnerability scanning** on HTTP/HTTPS (and port 8080) using Nikto
-4. **Markdown report generation** with neatly formatted tables and capped findings
+1. **Host Discovery**: Supports single IP/domain or entire networks (CIDR).
+2. **Service & Version Enumeration**: Scans common TCP ports (e.g. 21,22,80,443,8080) using Nmap, with automatic fallback if root privileges are not available.
+3. **Web Vulnerabilitys Scanning**: Runs Nikto against HTTP/HTTPS endpoints (including port 8080) with built-in timeout and result capping.
+4. **Automated Reporting**: Generates a clean Markdown report summarizing discoveries and vulnerabilities.
 
----
 
-## 🎯 Features
+## Installation
 
-* **Easy to use**: `./main.py --target example.com`
-* **Flexible discovery**: Accepts single hosts, domains, or CIDR networks
-* **Parallel scanning**: Fast SYN scans across multiple ports
-* **Capped vuln output**: Shows up to 20 Nikto findings per port, with count of additional results
-* **Clean reports**: Generates `reports/report_<target>.md` with sections:
-
-  * Hosts Discovered
-  * Service & Version Scan
-  * Web Vulnerability Scan
-
----
-
-## 🚀 Quick Start
-
-1. **Clone the repo**
-
+1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/AutoRecon.git
    cd AutoRecon
    ```
-
-2. **Set up Python environment**
-
+2. Create and activate a virtual environment:
    ```bash
    python3 -m venv venv
    source venv/bin/activate
+   ```
+3. Install dependencies and tools:
+   ```bash
    pip install -r requirements.txt
-   sudo apt update && sudo apt install nmap nikto
-   ```
-
-3. **Run AutoRecon**
-
-   ```bash
+   sudo apt update && sudo apt install -y nmap nikto
    chmod +x main.py
-   ./main.py --target testphp.vulnweb.com
    ```
 
-4. **View the report**
+## Usage
 
-   ```bash
-   less reports/report_testphp.vulnweb.com.md
-   ```
+Run a complete reconnaissance and vulnerability scan with a single command:
+```bash
+./main.py --target example.com
+```
 
----
+To skip the web vulnerability phase (for large or sensitive targets):
+```bash
+./main.py --target example.com --skip-vuln
+```
 
-## 📄 Sample Report
+Reports are saved to the `reports/` directory as `report_<target>.md`.
 
-![Sample Report Screenshot](docs/sample_report.png)
+## Why This Matters
 
----
+AutoRecon demonstrates my ability to:
+- Rapidly prototype and deliver a functional security tool
+- Automate complex workflows using Python and common pentesting utilities 
+- Produce clear, actionable reports that bridge technical and business audiences
 
-## ⚙️ Configuration
-
-* **Port List**: Modify `modules/scan.py` `PORT_LIST` constant
-* **Timeouts**: Adjust `timeout` in `modules/vulnscan.py`
-* **Max Findings**: Change `max_display` default in `web_vuln_scan`
-
----
-
-## 🛠️ Roadmap & Next Steps
-
-* [ ] GitHub Actions scheduled scans & auto‑commit reports
-* [ ] Docker container for one‑step deployment
-* [ ] HTML/PDF report generation via Pandoc & Jinja2 templates
-* [ ] Plugin architecture for custom scanners
-* [ ] Integration of Nmap vuln scripts and OWASP ZAP
-
----
-
-## 📚 License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-*Built by a recent M.S. Cybersecurity graduate from UMD.*
+I’m eager to bring this same drive and skill set to a forward-thinking security team. If you’re hiring for penetration testing, red teaming, or security automation roles, let’s connect!
