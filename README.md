@@ -1,4 +1,4 @@
-# AutoRecon* 
+# AutoRecon
 
 [![AutoRecon Scan](https://github.com/RACHA193/AutoRecon/actions/workflows/scan.yml/badge.svg)](https://github.com/RACHA193/AutoRecon/actions/workflows/scan.yml)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/RACHA193/AutoRecon/scan.yml?branch=main)](https://github.com/RACHA193/AutoRecon/actions)
